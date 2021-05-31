@@ -143,4 +143,17 @@ public class UserRegistrationJunitTest{
         boolean result = userRegistration.ValidatePassword("code$210");
         Assert.assertFalse(result);
     }
+    // case for 1 numeric number
+    // password contains 1 numeric number
+    @Test
+    public void givenPassword_ContainsOneNumericNumber_ReturnTrue()  {
+        boolean result = userRegistration.ValidatePassword("Code$2120");
+        Assert.assertTrue(result);
+    }
+    //case for no numeric number
+    @Test
+    public void givenPassword_DoNotContainOneNumericNumber_ReturnFalse() {
+        boolean result = userRegistration.ValidatePassword("Code$#");
+        Assert.assertFalse(result);
+    }
 }
