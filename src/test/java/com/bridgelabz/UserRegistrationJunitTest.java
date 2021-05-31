@@ -82,4 +82,37 @@ public class UserRegistrationJunitTest{
         boolean result = userRegistration.ValidateEmail("email48@gmail.inn");
         Assert.assertTrue(result);
     }
+
+    //Cases for Mobile Number
+    //Phone number followed with country code
+
+    @Test
+    public void givenPhoneNumber_FollowedByCountryCode_ReturnTrue() {
+        boolean result = userRegistration.ValidatePhoneNumber("91 7894561230");
+        Assert.assertTrue(result);
+    }
+
+    // Number does not contain country code
+
+
+    @Test
+    public void givenPhoneNumber_DoesNotFollowedByCountryCode_ReturnFalse(){
+        boolean result = userRegistration.ValidatePhoneNumber("7894561230");
+        Assert.assertFalse(result);
+    }
+
+    // Phone Number Does Not have 10 digit number
+    @Test
+    public void givenPhoneNumber_DoNotHaveTenDigitNumber_ReturnFalse() {
+        boolean result = userRegistration.ValidatePhoneNumber("789456213");
+        Assert.assertFalse(result);
+    }
+
+    // phone num  has 10 digit  number
+    @Test
+    public void givenPhoneNumber_HaseTenDigitNumber_ReturnTrue() {
+        boolean result = userRegistration.ValidatePhoneNumber("91 7894561230");
+        Assert.assertTrue(result);
+    }
+
 }
