@@ -16,5 +16,10 @@ public class UserRegistration {
         String Naming_Pattern = "^[A-Z][a-z]{2,}$";
         return (Pattern.matches(Naming_Pattern, lastName));
     }
+
+    public boolean ValidateEmail(String email) {
+        String Email = "^[a-z][a-zA-Z0-9]+([._+#-][a-zA-Z0-9]+)*@[a-zA-Z0-93]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
+        return (Pattern.matches(Email, email));
+    }
 }
 

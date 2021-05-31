@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserRegistrationJunitTest{
-    // test case for first name
+    // case for first name
     UserRegistration userRegistration = new UserRegistration();
 
     //Name Starts with a capital letter
@@ -29,6 +29,7 @@ public class UserRegistrationJunitTest{
         Assert.assertFalse(result);
     }
 
+    // Case For LastName
     //Last Name do not starts with Min three Letters
     @Test
     public void givenLastName_DoNotReturnMinThreeLetters_ReturnFalse() {
@@ -47,6 +48,38 @@ public class UserRegistrationJunitTest{
     @Test
     public void givenLastName_StartWithCapitalLetters_ReturnTrue() {
         boolean result = userRegistration.ValidateLastName("LastName");
+        Assert.assertTrue(result);
+    }
+
+    // case For Email
+
+    // Email starts with small letter
+
+    @Test
+    public void givenEmail_StartsWithSmallLetter_ReturnTrue() {
+        boolean result = userRegistration.ValidateEmail("email48@gmail.com");
+        Assert.assertTrue(result);
+    }
+    //Email starts with Capital letter
+
+    @Test
+    public void givenEmail_StartsWithCapitalLetter_ReturnFalse() {
+        boolean result = userRegistration.ValidateEmail("Email48@gmail.com");
+        Assert.assertTrue(result);
+    }
+
+    // email ends with .com
+
+    @Test
+    public void  givenEmail_EndsWithComOrIn_ReturnTrue() {
+        boolean result = userRegistration.ValidateEmail("email48@gmail.com");
+        Assert.assertTrue(result);
+    }
+    // email do not ends with .COM OR IN
+
+    @Test
+    public void givenEmail_DoNotEndsWithComOrIn_ReturnFalse() {
+        boolean result = userRegistration.ValidateEmail("email48@gmail.inn");
         Assert.assertTrue(result);
     }
 }
