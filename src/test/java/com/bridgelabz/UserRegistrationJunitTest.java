@@ -130,5 +130,17 @@ public class UserRegistrationJunitTest{
         Assert.assertTrue(result);
 
     }
-
+//Case For One UpperCase
+    //Password with 1 uppercase
+    @Test
+    public void givenPassword_ContainOneUpperCase_ReturnTrue() {
+        boolean result = userRegistration.ValidatePassword("Code$212");
+        Assert.assertTrue(result);
+    }
+// password does not contain any uppercase
+    @Test
+    public void givenPassword_ContainsNoUpperCase_ReturnFalse() {
+        boolean result = userRegistration.ValidatePassword("code$210");
+        Assert.assertFalse(result);
+    }
 }
