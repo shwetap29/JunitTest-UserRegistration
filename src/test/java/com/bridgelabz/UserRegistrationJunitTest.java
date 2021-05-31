@@ -28,5 +28,25 @@ public class UserRegistrationJunitTest{
         boolean result = userRegistration.ValidateFirstName("Fi");
         Assert.assertFalse(result);
     }
-}
 
+    //Last Name do not starts with Min three Letters
+    @Test
+    public void givenLastName_DoNotReturnMinThreeLetters_ReturnFalse() {
+        boolean result = userRegistration.ValidateLastName("la");
+        Assert.assertFalse(result);
+
+}
+// Last Name start with small letter
+    @Test
+    public void givenLastName_DoNotStartWithCapitalLetters_ReturnFalse() {
+        boolean result = userRegistration.ValidateLastName("lastName");
+        Assert.assertFalse(result);
+    }
+
+    // Last Name Starts With a Capital Letter
+    @Test
+    public void givenLastName_StartWithCapitalLetters_ReturnTrue() {
+        boolean result = userRegistration.ValidateLastName("LastName");
+        Assert.assertTrue(result);
+    }
+}
