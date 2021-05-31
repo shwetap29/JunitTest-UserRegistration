@@ -156,4 +156,17 @@ public class UserRegistrationJunitTest{
         boolean result = userRegistration.ValidatePassword("Code$#");
         Assert.assertFalse(result);
     }
+// case for One Special Character
+//Have  1 special character
+    @Test
+    public void givenPassword_PasswordHaveAtLeastOneSpecialCharacter_ReturnTrue() {
+        boolean result = userRegistration.ValidatePassword("Code$2120");
+        Assert.assertTrue(result);
+    }
+    // have no special Character
+    @Test
+    public void givenPassword_PasswordDoNotHaveAnySpecialCharacter_ReturnFalse() {
+        boolean result = userRegistration.ValidatePassword("Code2120");
+        Assert.assertFalse(result);
+    }
 }
