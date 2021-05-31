@@ -114,5 +114,21 @@ public class UserRegistrationJunitTest{
         boolean result = userRegistration.ValidatePhoneNumber("91 7894561230");
         Assert.assertTrue(result);
     }
+ // Validation of Password
+ //Must Contain Minimum 8 Characters
+
+    @Test
+    public void givenPassword_IsMinimumEightDigit_ReturnTrue() {
+        boolean result = userRegistration.ValidatePassword("Code$212");
+        Assert.assertTrue(result);
+    }
+    //Does Not Fulfill The Criteria
+
+    @Test
+    public void givenPassword_DoNotContainMinimumEightDigit_ReturnFalse()  {
+        boolean result = userRegistration.ValidatePassword("Code$");
+        Assert.assertTrue(result);
+
+    }
 
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.UserRegistrationJunitTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-05-31T10:59:51" hostname="SHWETA29" time="0.016">
+<testsuite name="com.bridgelabz.UserRegistrationJunitTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-05-31T11:11:52" hostname="SHWETA29" time="0.013">
   <properties/>
-  <testcase name="givenEmail_StartsWithCapitalLetter_ReturnFalse" classname="com.bridgelabz.UserRegistrationJunitTest" time="0.016">
+  <testcase name="givenPassword_DoNotContainMinimumEightDigit_ReturnFalse" classname="com.bridgelabz.UserRegistrationJunitTest" time="0.013">
     <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
 	at org.junit.Assert.assertTrue(Assert.java:52)
-	at com.bridgelabz.UserRegistrationJunitTest.givenEmail_StartsWithCapitalLetter_ReturnFalse(UserRegistrationJunitTest.java:68)
+	at com.bridgelabz.UserRegistrationJunitTest.givenPassword_DoNotContainMinimumEightDigit_ReturnFalse(UserRegistrationJunitTest.java:130)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

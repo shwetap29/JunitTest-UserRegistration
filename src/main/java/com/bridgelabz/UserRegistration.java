@@ -27,5 +27,10 @@ public class UserRegistration {
         return  (Pattern.matches(Phone_Number, PhoneNumber));
 
     }
+
+    public boolean ValidatePassword(String Password) {
+        String Password_Pattern = "(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%!]).{8,}";
+        return (Pattern.matches(Password_Pattern, Password));
+    }
 }
 
