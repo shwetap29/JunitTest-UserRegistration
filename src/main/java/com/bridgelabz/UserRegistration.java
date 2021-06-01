@@ -3,7 +3,7 @@ package com.bridgelabz;
 public class UserRegistration {
 
 
-    public boolean ValidateFirstName(String firstName) {
+    public static boolean ValidateFirstName(String firstName) {
         boolean Validation = firstName.matches("^[A-Z][a-z]{2,}$");
         if(Validation){
             System.out.println("First Name is Valid");

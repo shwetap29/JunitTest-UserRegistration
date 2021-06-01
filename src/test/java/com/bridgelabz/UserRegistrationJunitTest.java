@@ -11,14 +11,14 @@ public class UserRegistrationJunitTest{
     //Name Starts with a capital letter
     @Test
     public void givenFirstName_Return_True() {
-        boolean result = userRegistration.ValidateFirstName("FirstName");
-        Assert.assertTrue(result);
+         boolean result = userRegistration.ValidateFirstName("FirstName");
+         Assert.assertTrue(result);
     }
 
     // Name starts with small letter
     @Test
     public void givenFirstName_Return_False() {
-        boolean result =userRegistration.ValidateFirstName("firstName");
+        boolean result = userRegistration.ValidateFirstName("firstName");
         Assert.assertFalse(result);
     }
 
@@ -27,21 +27,23 @@ public class UserRegistrationJunitTest{
     public void givenFirstName_DoNotReturnMinThreeLetters_ReturnFalse() {
         boolean result = userRegistration.ValidateFirstName("Fi");
         Assert.assertFalse(result);
+
     }
 
     // Case For LastName
     //Last Name do not starts with Min three Letters
     @Test
     public void givenLastName_DoNotReturnMinThreeLetters_ReturnFalse() {
-        boolean result = userRegistration.ValidateLastName("la");
-        Assert.assertFalse(result);
+         boolean result = userRegistration.ValidateLastName("la");
+         Assert.assertFalse(result);
 
 }
 // Last Name start with small letter
     @Test
     public void givenLastName_DoNotStartWithCapitalLetters_ReturnFalse() {
-        boolean result = userRegistration.ValidateLastName("lastName");
-        Assert.assertFalse(result);
+         boolean result = userRegistration.ValidateLastName("lastName");
+         Assert.assertFalse(result);
+
     }
 
     // Last Name Starts With a Capital Letter
@@ -64,8 +66,8 @@ public class UserRegistrationJunitTest{
 
     @Test
     public void givenEmail_StartsWithCapitalLetter_ReturnFalse() {
-        boolean result = userRegistration.ValidateEmail("Email48@gmail.com");
-        Assert.assertTrue(result);
+        boolean result =  userRegistration.ValidateEmail("Email48@gmail.com");
+        Assert.assertFalse(result);
     }
 
     // email ends with .com
@@ -142,6 +144,7 @@ public class UserRegistrationJunitTest{
     public void givenPassword_ContainsNoUpperCase_ReturnFalse() {
         boolean result = userRegistration.ValidatePassword("code$210");
         Assert.assertFalse(result);
+
     }
     // case for 1 numeric number
     // password contains 1 numeric number
@@ -155,13 +158,15 @@ public class UserRegistrationJunitTest{
     public void givenPassword_DoNotContainOneNumericNumber_ReturnFalse() {
         boolean result = userRegistration.ValidatePassword("Code$#");
         Assert.assertFalse(result);
+
     }
 // case for One Special Character
 //Have  1 special character
     @Test
     public void givenPassword_PasswordHaveAtLeastOneSpecialCharacter_ReturnTrue() {
-        boolean result = userRegistration.ValidatePassword("Code$2120");
+        boolean result= userRegistration.ValidatePassword("Code$2120");
         Assert.assertTrue(result);
+
     }
     // have no special Character
     @Test
