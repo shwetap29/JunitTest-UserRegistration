@@ -53,5 +53,8 @@ public class UserRegistration {
         }
         return Validation;
     }
+
+    public void SelectOption() {
+    }
 }
 
