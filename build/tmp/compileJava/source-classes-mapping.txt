@@ -1,6 +1,9 @@
 com/bridgelabz/UserRegistration.java
  com.bridgelabz.UserRegistration
+<<<<<<< HEAD
 com/bridgelabz/UserMain.java
  com.bridgelabz.UserMain
+=======
+>>>>>>> UC11_JunitParameterisedTest
 com/bridgelabz/UserValidation.java
  com.bridgelabz.UserValidation
