@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.UserRegistrationJunitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-31T13:33:29" hostname="SHWETA29" time="0.006">
-  <properties/>
-  <testcase name="givenPassword_PasswordHaveAtLeastOneSpecialCharacter_ReturnTrue" classname="com.bridgelabz.UserRegistrationJunitTest" time="0.006"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
