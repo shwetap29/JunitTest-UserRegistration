@@ -1,2 +1,0 @@
-com/bridgelabz/UserRegistration.java
- com.bridgelabz.UserRegistration
