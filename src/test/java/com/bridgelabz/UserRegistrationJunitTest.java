@@ -6,113 +6,152 @@ import org.junit.Test;
 
 public class UserRegistrationJunitTest {
     // case for first name
-    UserRegistration userRegistration = new UserRegistration();
+    UserRegistration user = new UserRegistration();
+
 
     //Name Starts with a capital letter
     @Test
-    public void givenFirstName_ShouldReturn_True() {
-        boolean result = userRegistration.ValidateFirstName("FirstName");
-        Assert.assertTrue(result);
+    public void givenFirstName_WhenStartsWith_CapitalLetter_ShouldReturn_Valid() {
+        Assert.assertEquals("valid", UserRegistration.validateFirstName("Shweta", user.validate));
     }
-    //Name do not starts with small letter
+
+    // Name contains number
     @Test
-    public void givenFirstName_ShouldReturn_False() {
-        boolean result = userRegistration.ValidateFirstName("firstName");
-        Assert.assertFalse(result);
+    public void givenFirstName_WhenContainsNumber_ShouldReturn_InValid() {
+        Assert.assertEquals("INVALID_FIRSTNAME" ,UserRegistration.validateFirstName("Shweta29" , user.validate));
     }
+
     //When name does not contain minimum 3 letters
     @Test
-    public void givenFirstName_DoNotReturnMinThreeLetters_ShouldReturnFalse() {
-        boolean result = userRegistration.ValidateFirstName("Fi");
-        Assert.assertFalse(result);
+    public void givenFirstName_DoNotReturnMinThreeLetters_ShouldReturn_Invalid() {
+        Assert.assertEquals("INVALID_FIRSTNAME" ,UserRegistration.validateFirstName("Sh", user.validate));
     }
+
+    // When name starts with small letters
+    @Test
+    public void givenFirstName_StartsWithSmallLetter_ShouldReturn_Invalid() {
+        Assert.assertEquals("INVALID_FIRSTNAME" ,UserRegistration.validateFirstName("shweta", user.validate));
+    }
+
     // Case For LastName
     //Last Name do not starts with Min three Letters
-
     @Test
-    public void givenLastName_DoNotReturnMinThreeLetters_ShouldReturnFalse() {
-        boolean result = userRegistration.ValidateLastName("la");
-        Assert.assertFalse(result);
+    public void givenLastName_WhenDoNotReturnMinThreeLetters_ShouldReturnFalse() {
+        Assert.assertEquals("INVALID_FIRSTNAME" ,UserRegistration.validateLastName("PR" , user.validate));
+
     }
     // Last Name start with small letter
     @Test
-    public void  givenLastName_DoNotStartWithCapitalLetters_ShouldReturnFalse() {
-        boolean result = userRegistration.ValidateLastName("lastName");
-        Assert.assertFalse(result);
+    public void givenLastName_WhenDoNotStartWithCapitalLetters_ShouldReturnFalse() {
+        Assert.assertEquals("INVALID_LASTNAME" ,UserRegistration.validateLastName("prasad", user.validate));
     }
+
     // Last Name Starts With a Capital Letter
     @Test
-    public void givenLastName_StartWithCapitalLetters_ShouldReturnTrue() {
-        boolean result = userRegistration.ValidateLastName("LastName");
-        Assert.assertTrue(result);
+    public void givenLastName_WhenStartsWithCapitalLetters_ShouldReturn_Valid() {
+        Assert.assertEquals("VALID_LASTNAME" ,UserRegistration.validateLastName("Prasad", user.validate));
     }
+
     // case For Email
 
     // Email starts with small letter
-    @Test
-    public void givenEmail_StartsWithSmallLetter_ShouldReturnTrue() {
-        boolean result = userRegistration.ValidateEmail("email48@gmail.com");
-        Assert.assertTrue(result);
-    }
 
-    //Email starts with Capital letter
     @Test
-    public void  givenEmail_StartsWithCapitalLetter_ShouldReturnFalse() {
-        boolean result = userRegistration.ValidateEmail("Email48@gmail.com");
-        Assert.assertTrue(result);
+    public void givenEmail_WhenStartsWithSmallLetter_ShouldReturn_Valid() {
+        Assert.assertEquals("VALID_EMAIL" , UserRegistration.validateEmail("shweta48@" , user.validate));
+    }
+    //Email starts with Capital letter
+
+    @Test
+    public void givenEmail_StartsWithCapitalLetter_ShouldReturn_Invalid() {
+        Assert.assertEquals("INVALID_EMAIL" , UserRegistration.validateEmail("Shweta48@", user.validate));
     }
 
     // email ends with .com
+
     @Test
-    public void  givenEmail_EndsWithComOrIn_ShouldReturnTrue() {
-        boolean result = userRegistration.ValidateEmail("email48@gmail.com");
-        Assert.assertTrue(result);
+    public void  givenEmail_EndsWithComOrIn_ShouldReturn_Valid() {
+        Assert.assertEquals("VALID_EMAIL" , UserRegistration.validateEmail("shweta48@gmail.com", user.validate));
+    }
+    // email do not ends with .COM OR IN
+
+    @Test
+    public void givenEmail_DoNotEndsWithComOrIn_ShouldReturn_Invalid() {
+        Assert.assertEquals("INVALID_EMAIL" , UserRegistration.validateEmail("shweta48@" , user.validate));
     }
 
-    // email do not ends with .COM OR IN
-    @Test
-    public void  givenEmail_DoNotEndsWithComOrIn_ShouldReturnFalse() {
-        boolean result = userRegistration.ValidateEmail("email48@gmail.inn");
-        Assert.assertTrue(result);
-    }
     //Cases for Mobile Number
     //Phone number followed with country code
+
     @Test
-    public void givenPhoneNumber_FollowedByCountryCode_ShouldReturnTrue() {
-        boolean result = userRegistration.ValidatePhoneNumber("91 7894561230");
-        Assert.assertTrue(result);
+    public void givenPhoneNumber_WhenFollowedByCountryCode_ShouldReturn_Valid() {
+        Assert.assertEquals("VALID_NUMBER" , UserRegistration.validateMobileNumber("91 9784561230", user.validate));
     }
+
     // Number does not contain country code
     @Test
-    public void givenPhoneNumber_DoesNotFollowedByCountryCode_ShouldReturnFalse(){
-        boolean result = userRegistration.ValidatePhoneNumber("7894561230");
-        Assert.assertFalse(result);
+    public void givenPhoneNumber_DoesNotFollowedByCountryCode_ShouldReturn_Invalid(){
+        Assert.assertEquals("INVALID_NUMBER" ,UserRegistration.validateMobileNumber("9876543210", user.validate));
     }
+
     // Phone Number Does Not have 10 digit number
     @Test
-    public void givenPhoneNumber_DoNotHaveTenDigitNumber_ShouldReturnFalse() {
-        boolean result = userRegistration.ValidatePhoneNumber("789456213");
-        Assert.assertFalse(result);
+    public void givenPhoneNumber_DoNotHaveTenDigitNumber_ShouldReturnInvalid() {
+        Assert.assertEquals("INVALID_NUMBER" ,UserRegistration.validateMobileNumber("789456123",user.validate));
     }
+
     // phone num  has 10 digit  number
     @Test
-    public void givenPhoneNumber_HaseTenDigitNumber_ShouldReturnTrue() {
-        boolean result = userRegistration.ValidatePhoneNumber("91 7894561230");
-        Assert.assertTrue(result);
+    public void givenPhoneNumber_HasTenDigitNumber_ShouldReturn_Valid() {
+        Assert.assertEquals("VALID_NUMBER" ,UserRegistration.validateMobileNumber("7894561230" , user.validate));
     }
-
     // Validation of Password
     //Must Contain Minimum 8 Characters
-    @Test
-    public void givenPassword_IsMinimumEightDigit_ShouldReturnTrue() {
-        boolean result = userRegistration.ValidatePassword("Code$212");
-        Assert.assertTrue(result);
-    }
 
-    //Does Not Fulfill The Criteria
     @Test
-    public void givenPassword_DoNotContainMinimumEightDigit_ShouldReturnFalse()  {
-        boolean result = userRegistration.ValidatePassword("Code$");
-        Assert.assertTrue(result);
+    public void givenPassword_IsMinimumEightDigit_ShouldReturn_Valid() {
+        Assert.assertEquals("VALID_PASSWORD" ,UserRegistration.validatePassword("Code$123", user.validate));
+    }
+    //Does Not Fulfill The Criteria
+
+    @Test
+    public void givenPassword_WhenDoNotContainMinimumEightDigit_ShouldReturn_Invalid()  {
+        Assert.assertEquals("INVALID_PASSWORD" ,UserRegistration.validatePassword("Code@12", user.validate));
+
+    }
+    //Case For One UpperCase
+    //Password with 1 uppercase
+    @Test
+    public void givenPassword_WhenContainOneUpperCase_ShouldReturn_Valid() {
+        Assert.assertEquals("VALID_PASSWORD" , UserRegistration.validatePassword("Code@", user.validate));
+    }
+    // password does not contain any uppercase
+    @Test
+    public void givenPassword_WhenContainsNoUpperCase_ShouldReturn_Invalid() {
+        Assert.assertEquals("INVALID_PASSWORD" ,UserRegistration.validatePassword("code@", user.validate));
+    }
+    // case for 1 numeric number
+    // password contains 1 numeric number
+    @Test
+    public void givenPassword_WhenContainsOneNumericNumber_ShouldReturn_Valid()  {
+        Assert.assertEquals("VALID_PASSWORD" ,UserRegistration.validatePassword("Code1", user.validate));
+    }
+    //case for no numeric number
+    @Test
+    public void givenPassword_DoNotContainOneNumericNumber_Return_Invalid() {
+        Assert.assertEquals("INVALID_PASSWORD" ,UserRegistration.validatePassword("Code@#" , user.validate));
+    }
+    // case for One Special Character
+//Have  1 special character
+    @Test
+    public void givenPassword_WhenPasswordHaveAtLeastOneSpecialCharacter_ShouldReturn_Valid() {
+        Assert.assertEquals("VALID_PASSWORD" ,UserRegistration.validatePassword("Code@" , user.validate));
+    }
+    // have no special Character
+    @Test
+    public void givenPassword_WhenPasswordDoNotHaveAnySpecialCharacter_ShouldReturn_Invalid() {
+        Assert.assertEquals("INVALID_PASSWORD" ,UserRegistration.validatePassword("Code123", user.validate));
     }
 }
+
+

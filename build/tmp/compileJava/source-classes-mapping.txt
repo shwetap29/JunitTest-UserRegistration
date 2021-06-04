@@ -1,9 +1,18 @@
+com/brideglabz/InvalidUserDetailsException.java
+ com.brideglabz.InvalidUserDetailsException
+ com.brideglabz.InvalidUserDetailsException$invalidCredentials
+InvalidUserDetailsException/invalidCredentials/INVALID_FIRSTNAME.java
+ InvalidUserDetailsException.invalidCredentials.INVALID_FIRSTNAME
+com/bridgelabz/INVALID_FIRSTNAME.java
+ com.bridgelabz.INVALID_FIRSTNAME
+com/bridgelabz/InvalidUserDetailsException.java
+ com.bridgelabz.InvalidUserDetailsException
+ com.bridgelabz.InvalidUserDetailsException$invalidCredentials
+com/bridgelabz/ValidateInput.java
+ com.bridgelabz.ValidateInput
 com/bridgelabz/UserRegistration.java
  com.bridgelabz.UserRegistration
-<<<<<<< HEAD
-com/bridgelabz/UserMain.java
- com.bridgelabz.UserMain
-=======
->>>>>>> UC11_JunitParameterisedTest
+com/bridgelabz/UserFieldPattern.java
+ com.bridgelabz.UserFieldPattern
 com/bridgelabz/UserValidation.java
  com.bridgelabz.UserValidation

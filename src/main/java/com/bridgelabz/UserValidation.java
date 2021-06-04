@@ -48,4 +48,19 @@ public class UserValidation  extends UserRegistration {
         }
     }
 
+    private void ValidatePassword(String password) {
+    }
+
+    private void ValidatePhoneNumber(String mobile) {
+    }
+
+    private void ValidateEmail(String email) {
+    }
+
+    private void ValidateLastName(String lastName) {
+    }
+
+    private void ValidateFirstName(String firstName) {
+    }
+
 }
